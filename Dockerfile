@@ -1,21 +1,35 @@
-FROM maven:3.6.3-jdk-8 
+################ Build & Dev ################
+# Build stage will be used:
+# - for building the application for production
+# - as target for development (see devspace.yaml)
+FROM maven:3.6.3-jdk-11 as build
 
 # Create project directory (workdir)
-RUN mkdir -p /java/src/app
-WORKDIR /java/src/app
+RUN mkdir /app
+WORKDIR /app
 
 # Add source code files to WORKDIR
 ADD . .
-RUN chmod +x CompileDaemon && mv ./CompileDaemon /usr/bin/
 
-# Install dependencies
-#RUN mvn compile 
+# Build application
+RUN ./build.sh
 
-# Build application (test if everything works)
-RUN mvn package -U -Dmaven.test.skip=true
+# Container start command for development
+# Allows DevSpace to restart the dev container
+# It is also possible to override this in devspace.yaml via images.*.cmd
+CMD ["build.sh", "run"]
 
+
+################ Production ################
+# Creates a minimal image for production using distroless base image
+# More info here: https://github.com/GoogleContainerTools/distroless
+FROM gcr.io/distroless/java:11 as production
+
+# Copy application binary from build/dev stage to the distroless container
+COPY --from=build /app/main.jar /
+
+# Application port (optional)
 EXPOSE 8080
 
-# Start CompileDaemon for hot reloading (will watch for file changes and then rebuild & restart the application)
-ENTRYPOINT CompileDaemon -log-prefix=false -color=true -pattern="(.+\.java|.+\.c)$" -build="mvn package -U -D maven.test.skip=true" -command="java -jar ./target/quickstart-1.0-shaded.jar"
-
+# Container start command for production
+CMD ["/main.jar"]
