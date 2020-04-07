@@ -26,7 +26,7 @@ CMD ["./build.sh", "run"]
 FROM gcr.io/distroless/java:11 as production
 
 # Copy application binary from build/dev stage to the distroless container
-COPY --from=build /app/main.jar /
+COPY --from=build /app/target/main.jar /
 
 # Application port (optional)
 EXPOSE 8080
