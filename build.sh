@@ -4,7 +4,7 @@
 mvn package -U -Dmaven.test.skip=true
 
 # Rename jar file
-mv target/*.jar main.jar
+cp target/*.jar main.jar
 
 # Start application if `run` argument is passed
 if [ $1 = "run" ]; then
