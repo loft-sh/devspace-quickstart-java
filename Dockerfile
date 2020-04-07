@@ -17,7 +17,7 @@ RUN ./build.sh
 # Container start command for development
 # Allows DevSpace to restart the dev container
 # It is also possible to override this in devspace.yaml via images.*.cmd
-CMD ["build.sh", "run"]
+CMD ["./build.sh", "run"]
 
 
 ################ Production ################
