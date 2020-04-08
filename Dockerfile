@@ -8,6 +8,10 @@ FROM maven:3.6.3-jdk-11 as build
 RUN mkdir /app
 WORKDIR /app
 
+# Install maven dependency packages
+COPY pom.xml .
+RUN mvn -T 1C install && rm -rf target
+
 # Add source code files to WORKDIR
 ADD . .
 
@@ -26,7 +30,7 @@ CMD ["./build.sh", "run"]
 FROM gcr.io/distroless/java:11 as production
 
 # Copy application binary from build/dev stage to the distroless container
-COPY --from=build /app/main.jar /
+COPY --from=build /app/target/main.jar /
 
 # Application port (optional)
 EXPOSE 8080
