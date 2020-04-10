@@ -1,6 +1,5 @@
-
-target/
 Dockerfile
+target/
 
 # Ignore .git folder
 .git
