@@ -5,7 +5,6 @@
 FROM maven:3.6.3-jdk-11 as build
 
 # Create project directory (workdir)
-RUN mkdir /app
 WORKDIR /app
 
 # Install maven dependency packages
