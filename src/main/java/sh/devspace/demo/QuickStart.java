@@ -29,10 +29,10 @@ public class QuickStart
         public void handle(HttpExchange t) throws IOException {
             String response = "<html>" +  
               "<head>" +  
-              "	<link rel=\"stylesheet\" href=\"https://devspace.cloud/quickstart.css\">" +  
+              "	<link rel=\"stylesheet\" href=\"https://devspace.sh/css/quickstart.css\">" +  
               "</head>" +  
               "<body>" +  
-              "	<img src=\"https://devspace.cloud/img/congrats.gif\" />" +  
+              "	<img src=\"https://devspace.sh/images/congrats.gif\" />" +  
               "	<h1>You deployed this project with DevSpace!</h1>" +  
               "	<div>" +  
               "		<h2>Now it's time to code:</h2>" +  
