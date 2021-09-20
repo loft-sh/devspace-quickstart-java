@@ -37,7 +37,7 @@ public class QuickStart
               "	<div>" +  
               "		<h2>Now it's time to code:</h2>" +  
               "		<ol>" +  
-              "			<li>Edit this text in <code>src/main/java/sh/devspace/demo/QuckStart.java</code> and save the file</li>" +  
+              "			<li>Edit this text in <code>src/main/java/sh/devspace/demo/QuickStart.java</code> and save the file</li>" +  
               "			<li>Restart the application with <code>./build.sh run</code></li>" +  
               "			<li>Reload browser to see the changes</li>" +  
               "		</ol>" +  
