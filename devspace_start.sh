@@ -20,7 +20,7 @@ Welcome to your development container!
 This is how you can work with it
 - Run \`${COLOR_CYAN}./build.sh run${COLOR_RESET}\` to run the application
 - ${COLOR_CYAN}Files will be synchronized${COLOR_RESET} between your local machine and this container
-- Some ports will be forwarded, so you can access this container on your local machine via ${COLOR_CYAN}localhost${COLOR_RESET}:3000
+- Some ports will be forwarded, so you can access this container on your local machine via ${COLOR_CYAN}localhost${COLOR_RESET}:8080
 "
 
 bash
