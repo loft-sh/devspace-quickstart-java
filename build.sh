@@ -14,5 +14,6 @@ cp target/*.jar target/main.jar
 
 # Start application if `run` argument is passed
 if [ $1 = "run" ]; then
+  echo "Started application on ::8080"
   java -jar target/main.jar
 fi
