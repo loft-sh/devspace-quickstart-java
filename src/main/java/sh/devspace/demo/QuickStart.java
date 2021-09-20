@@ -38,7 +38,7 @@ public class QuickStart
               "		<h2>Now it's time to code:</h2>" +  
               "		<ol>" +  
               "			<li>Edit this text in <code>src/main/java/sh/devspace/demo/QuckStart.java</code> and save the file</li>" +  
-              "			<li>Restart the application with <code>mvn package -T 1C -U -Dmaven.test.skip=true  && java -jar target/quickstart-1.0.jar</code></li>" +  
+              "			<li>Restart the application with <code>./build.sh run</code></li>" +  
               "			<li>Reload browser to see the changes</li>" +  
               "		</ol>" +  
               "	</div>" +  
