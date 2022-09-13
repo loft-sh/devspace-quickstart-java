@@ -24,3 +24,7 @@ hs_err_pid*
 
 # ignore build artifacts
 target/
+
+
+# Ignore DevSpace cache and log folder
+.devspace/
